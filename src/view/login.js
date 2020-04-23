@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Dimensions, StatusBar, StyleSheet, Image, Button, Alert } from 'react-native';
+import { View, Dimensions, StatusBar, StyleSheet, Image, Button, Alert  } from 'react-native';
 
 
 const screen = Dimensions.get('window')
