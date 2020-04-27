@@ -4,20 +4,31 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import createAnimatedSwitchNavigator from 'react-navigation-animated-switch';
 import { Transition } from 'react-native-reanimated';
+import { createBottomTabNavigator} from 'react-navigation-tabs';
 import {
     Login,
     Beranda,
     SignUp,
-    Formlogin
+    Formlogin,
+    Maps,
 } from "../view";
 
 const Home = createStackNavigator({
     Beranda: {
-        screen: Beranda,
+        screen:Beranda,
         navigationOptions: {
             header: null
           },
     }
+})
+const Tabs = createBottomTabNavigator({
+    Beranda:{
+        screen:Beranda
+    },
+    Maps:{
+        screen:Maps
+    }
+    
 })
 
 const SignIn = createStackNavigator({
@@ -52,7 +63,7 @@ const Router = (isSign = false) => createAppContainer(
               },
         },
         Home: {
-            screen: Home,
+            screen: Tabs,
             navigationOptions: {
                 header: null
               },
