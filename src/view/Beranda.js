@@ -1,25 +1,42 @@
 import React, { Component } from 'react';
-import { View, Text, Button, Image, ScrollView, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, Button, Image, ScrollView, StyleSheet, Dimensions, StatusBar } from 'react-native';
 import { Card, Icon } from 'react-native-elements';
+import database from '@react-native-firebase/database';
 
 const screen = Dimensions.get('window')
 class Beranda extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      dataPengaduan:[]
     };
+  }
+  componentDidMount() {
+    database()
+      .ref('/pengaduan')
+      .on('value', data => {
+        data.forEach(snapshot => {
+          var obj ={}
+          obj = snapshot
+          obj.id = snapshot.key
+          console.log('User data: ', obj);
+
+        });
+        
+      });
   }
 
   render() {
     return (
       <View>
+        <StatusBar backgroundColor={'#fff'} barStyle={'dark-content'} />
         <View style={style.container}>
           <Image
-          source={require('../assets/mobil.jpg')}
+            source={require('../assets/mobil.jpg')}
           />
           <Text style={{
-            fontSize:40,
-            fontWeight:'700'
+            fontSize: 40,
+            fontWeight: '700'
           }}
           >
             agagagag
@@ -37,11 +54,11 @@ const style = StyleSheet.create({
     marginHorizontal: 17,
     elevation: 8,
     borderRadius: 8,
-    
+
   },
-  img:{
-    height:screen.width *.7,
-    width: screen.width *.7,
+  img: {
+    height: screen.width * .7,
+    width: screen.width * .7,
   }
 })
 

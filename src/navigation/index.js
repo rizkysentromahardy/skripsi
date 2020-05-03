@@ -11,6 +11,7 @@ import {
     SignUp,
     Formlogin,
     Maps,
+    Camera
 } from "../view";
 
 const Home = createStackNavigator({
@@ -27,6 +28,9 @@ const Tabs = createBottomTabNavigator({
     },
     Maps:{
         screen:Maps
+    },
+    Camera:{
+        screen:Camera
     }
     
 })
