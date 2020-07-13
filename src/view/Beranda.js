@@ -28,33 +28,35 @@ class Beranda extends Component {
 
   render() {
     return (
-      <View>
+      <View style={style.container}>
         <StatusBar backgroundColor={'#fff'} barStyle={'dark-content'} />
-        <View style={style.container}>
+        <View style={style.card}>
           <Image
-           
           />
           <Text style={{
             fontSize: 40,
             fontWeight: '700'
           }}
-          >
-            
+          >  
           </Text>
 
         </View>
+        <View style={{height:40,width:10,backgroundColor:'red'}}></View>
       </View>
     );
   }
 }
 
 const style = StyleSheet.create({
-  container: {
+  container:{ 
+flex:2
+  },
+  card: {
     backgroundColor: '#fff',
     marginHorizontal: 17,
     elevation: 8,
     borderRadius: 8,
-
+    flexDirection:'column',
   },
   img: {
     height: screen.width * .7,
