@@ -16,6 +16,7 @@ class camera extends Component {
             desc: '',
             loading: false,
             progress: '0%'
+            
         };
     }
 
@@ -71,7 +72,7 @@ class camera extends Component {
 
     onchangeImage() {
         const options = {
-            title: 'Select Avatar',
+            title: 'Select Avatar r',
             customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
             storageOptions: {
                 skipBackup: true,
