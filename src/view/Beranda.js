@@ -32,14 +32,14 @@ class Beranda extends Component {
         <StatusBar backgroundColor={'#fff'} barStyle={'dark-content'} />
         <View style={style.container}>
           <Image
-            source={require('../assets/mobil.jpg')}
+           
           />
           <Text style={{
             fontSize: 40,
             fontWeight: '700'
           }}
           >
-            agagagag
+            
           </Text>
 
         </View>
